@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package order.v1;
+
+option go_package = "github.com/mxkwnz/ap2-generated/order/v1;orderv1";
+
+service OrderService {
+  rpc SubscribeToOrderUpdates(OrderRequest) returns (stream OrderStatusUpdate);
+}
+
+message OrderRequest {
+  string order_id = 1;
+}
+
+message OrderStatusUpdate {
+  string order_id = 1;
+  string status   = 2;
+  string message  = 3;
+}
