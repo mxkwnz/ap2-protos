@@ -20,6 +20,7 @@ message PaymentResponse {
   string transaction_id = 1;
   string status         = 2;
   google.protobuf.Timestamp processed_at = 3;
+  int64 amount = 4;
 }
 
 message ListPaymentsRequest {
